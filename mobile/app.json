@@ -1,0 +1,45 @@
+{
+  "expo": {
+    "name": "DI-MY",
+    "slug": "di-my",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#FF6B35"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "infoPlist": {
+        "NSCameraUsageDescription": "DI-MY needs camera access to photograph your repair issue.",
+        "NSPhotoLibraryUsageDescription": "DI-MY needs photo library access to select an image of your repair issue."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#FF6B35"
+      },
+      "permissions": [
+        "CAMERA",
+        "READ_EXTERNAL_STORAGE"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "DI-MY needs photo library access to select an image of your repair issue.",
+          "cameraPermission": "DI-MY needs camera access to photograph your repair issue."
+        }
+      ],
+      "expo-font"
+    ]
+  }
+}
