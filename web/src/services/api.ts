@@ -1,3 +1,4 @@
+/// <reference types="vite/client" />
 import { DiagnoseRequest, DiagnoseResponse, ApiError } from '../types';
 
 const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://di-my-app-production.up.railway.app';
