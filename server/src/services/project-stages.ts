@@ -253,7 +253,17 @@ export async function runStage2(req: ProjectStage2Request): Promise<ProjectStage
 
   const raw = tryParse(await callClaude(STAGE2_SYSTEM, userMessage, 2000));
 
-  if (!raw) throw new Error('Could not calculate materials — please check your measurements and try again.');
+  if (!raw) {
+  return {
+    introMessage: 'I could not calculate exact materials for this job, but I can still continue with a general repair plan.',
+    materials: [],
+    estimatedDIYCost: null,
+    estimatedProCost: null,
+    estimatedDifficultyScore: null,
+    estimatedTime: null,
+    calculationNotes: 'Materials not calculated because the job does not require clear room measurements or the AI response could not be parsed.'
+  };
+}
 
   return {
     introMessage: typeof raw.introMessage === 'string' ? raw.introMessage : '',
