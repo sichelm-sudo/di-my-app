@@ -1,6 +1,6 @@
 import { DiagnoseRequest, DiagnoseResponse, ApiError } from '../types';
 
-const API_URL = import.meta.env.VITE_API_URL || "https://di-my-app-production.up.railway.app";
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://di-my-app-production.up.railway.app';
 
 // Project planning responses are large — allow up to 2 minutes before aborting
 const TIMEOUT_MS = 120_000;
@@ -13,7 +13,7 @@ export async function diagnoseIssue(request: DiagnoseRequest): Promise<DiagnoseR
     let response: Response;
 
     try {
-      response = await fetch(`${API_BASE_URL}/api/diagnose`, {
+    response = await fetch(`${API_BASE_URL}/api/diagnose`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(request),
