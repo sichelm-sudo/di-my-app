@@ -1,6 +1,6 @@
 import { DiagnoseResponse, ApiError } from '../types';
 
-const API_BASE_URL = 'http://localhost:3001';
+const API_BASE_URL = 'https://di-my-app-production.up.railway.app';
 
 export async function diagnoseIssue(
   imageBase64: string | null,

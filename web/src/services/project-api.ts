@@ -4,7 +4,7 @@ import {
   ProjectStage3Request, ProjectStage3Result,
 } from '../types';
 
-const API_BASE = 'http://localhost:3001';
+const API_BASE = 'https://di-my-app-production.up.railway.app';
 
 async function callProject<T>(path: string, body: unknown, timeoutMs: number): Promise<T> {
   const controller = new AbortController();
