@@ -27,7 +27,7 @@ npm run build
 npm start
 ```
 
-The server runs on `http://localhost:3001` by default.
+The server runs on `https://di-my-app-production.up.railway.app` by default.
 
 ## Endpoints
 
