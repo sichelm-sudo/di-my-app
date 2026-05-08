@@ -17,6 +17,15 @@ app.use(cors());
 app.use(express.json({ limit: '25mb' }));
 app.use(express.urlencoded({ extended: true, limit: '25mb' }));
 
+app.use(cors({
+  origin: [
+    'http://localhost:5173',
+    'http://localhost:3000',
+    'https://di-my-app-mtmk.vercel.app'
+  ],
+  credentials: true
+}));
+
 app.get('/health', (_req, res) => {
   res.json({ status: 'ok', service: 'DI-MY API', timestamp: new Date().toISOString() });
 });
